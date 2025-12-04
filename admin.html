@@ -1,0 +1,53 @@
+<html lang="en">
+
+
+<main class="container">
+<section class="card form-card">
+<h3>Add Book</h3>
+<form id="book-form">
+<div class="form-row">
+<label>Title</label>
+<input type="text" id="title" required />
+</div>
+<div class="form-row">
+<label>Author</label>
+<input type="text" id="author" required />
+</div>
+<div class="form-row">
+<label>Category</label>
+<select id="category">
+<option value="Fiction">Fiction</option>
+<option value="Comedy">Comedy</option>
+<option value="Technical">Technical</option>
+</select>
+</div>
+<div class="form-actions">
+<button class="btn" type="submit">Add Book</button>
+</div>
+</form>
+
+
+<div class="controls">
+<button id="sort-btn" class="btn small">Sort by Title A → Z</button>
+<label class="filter">Category:
+<select id="filter-select">
+<option value="All">All</option>
+<option value="Fiction">Fiction</option>
+<option value="Comedy">Comedy</option>
+<option value="Technical">Technical</option>
+</select>
+</label>
+</div>
+</section>
+
+
+<section>
+<h3 class="section-title">Books</h3>
+<div id="books-grid" class="grid"></div>
+</section>
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>
