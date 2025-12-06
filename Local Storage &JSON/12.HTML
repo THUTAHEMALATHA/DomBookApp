@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creating & Removing Elements</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    button {
+      margin-right: 10px;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+    #container {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #aaa;
+      min-height: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Creating and Removing Elements</h2>
+
+  <!-- Buttons -->
+  <button id="addBtn">Add Paragraph</button>
+  <button id="removeBtn">Remove Last Paragraph</button>
+
+  <!-- Div where paragraphs will be added -->
+  <div id="container"></div>
+
+  <script>
+    // Select the required elements
+    const addBtn = document.getElementById("addBtn");
+    const removeBtn = document.getElementById("removeBtn");
+    const container = document.getElementById("container");
+
+    // Add Paragraph functionality
+    addBtn.addEventListener("click", function () {
+      // 1. Create a <p> element
+      const para = document.createElement("p");
+
+      // 2. Add text to the paragraph
+      para.textContent = "This is a new paragraph.";
+
+      // 3. Append the paragraph to the container div
+      container.appendChild(para);
+    });
+
+    // Remove Last Paragraph functionality
+    removeBtn.addEventListener("click", function () {
+      // Get the last child paragraph inside the container
+      const lastPara = container.lastElementChild;
+
+      // Only remove if a paragraph exists
+      if (lastPara) {
+        container.removeChild(lastPara);
+      }
+    });
+  </script>
+
+</body>
+</html>
